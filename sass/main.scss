@@ -1,0 +1,231 @@
+// colors
+$bg-color: #fff;
+$color1: #415361;
+$color2: #ffb53c;
+
+// sizes
+$cube-height: 300px;
+$cube-width: 300px;
+
+// mixin
+@mixin center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+  content: $content;
+  position: $position;
+}
+
+@mixin reset() {
+  * {
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+      display: block;
+    }
+  }
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  @include center;
+  background: $bg-color;
+  padding-top: 10%;
+  margin-left: -7%;
+}
+
+.logo {
+  @include reset;
+  .line1 {
+    height: 60px;
+    width: 225px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 31px solid $color1;
+    margin-left: -24px;
+    transform: rotateX(58deg) rotateZ(47deg) translate(0, 0);
+    &::before {
+      @include pseudo;
+      height: 270px;
+      width: 40px;
+      left: 0;
+      top: 0;
+      border: 31px solid $color1;
+      background: $color1;
+      transform: rotateX(10deg) rotateY(0deg) rotateZ(-4deg) translate(-21px, 0);
+    }
+    &::after {
+      @include pseudo;
+      height: 30px;
+      width: 40px;
+      left: 0;
+      top: 0;
+      border: 31px solid $bg-color;
+      background: $bg-color;
+      transform: rotateX(10deg) rotateY(0deg) rotateZ(-4deg) translate(-91px, 0);
+    }
+  }
+  .border-1 {
+    width: 100px;
+    height: 125px;
+    background: $bg-color;
+    position: absolute;
+    left: -248px;
+    z-index: 1;
+  }
+  .line2 {
+    height: 60px;
+    width: 500px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 32px solid $color1;
+    left: 80px;
+    transform: rotateX(60deg) rotateZ(49deg) translate(60px, 425px);
+  }
+  .line2-1 {
+    height: 60px;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: -35px;
+    margin-top: -5px;
+    background: transparent;
+    transform: rotateX(60deg) rotateZ(45deg)translate(0, 0);
+    &::before {
+      @include pseudo;
+      height: 280px;
+      width: 60px;
+      left: 283px;
+      top: 0;
+      border: 31px solid $color2;
+      background: $color2;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(-4deg) translate(0, -15px);
+    }
+    &::after {
+      @include pseudo;
+      height: 5px;
+      width: 10px;
+      left: 310px;
+      top: 0;
+      border: 30px solid $color2;
+      border-width: 10px 63px 0 0;
+      background: $color2;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(4deg) translate(0, 260px);
+    }
+  }
+  .line2-2 {
+    height: 50px;
+    width: 245px;
+    position: absolute;
+    left: 0;
+    top: 135px;
+    margin-left: 70px;
+    border-style: solid;
+    border-width: 40px 40px 0 0;
+    border-color: $color2 transparent transparent;
+    transform: rotateX(45deg) rotateZ(90deg) rotateY(0deg) translate(15px, -2px);
+  }
+  .border1-1 {
+    width: 100px;
+    height: 300px;
+    background: $bg-color;
+    position: absolute;
+    left: 218px;
+    top: 40px;
+    z-index: 1;
+  }
+  .border1-2 {
+    width: 100px;
+    height: 65px;
+    background: $bg-color;
+    position: absolute;
+    left: 229px;
+    top: -10px;
+    z-index: 1;
+    transform: rotateX(60deg) rotateZ(45deg)translate(50px, 90px);
+  }
+  .line3 {
+    height: 60px;
+    width: 250px;
+    position: absolute;
+    left: -148px;
+    top: 320px;
+    border: 30px solid transparent;
+    transform: rotateX(45deg) rotateZ(225deg) rotateY(0deg) translate(50px, 20px);
+    &::before {
+      @include pseudo;
+      height: 250px;
+      width: 50px;
+      left: 0;
+      top: 0;
+      border: 0px solid $color1;
+      background: $color1;
+      z-index: 1;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(5deg) translate(-58px, -20px);
+    }
+  }
+  .line3-1 {
+    width: 220px;
+    position: absolute;
+    left: -148px;
+    top: 320px;
+    border: 27px solid $color1;
+    transform: rotateX(45deg) rotateZ(219deg) rotateY(0deg) translate(8px, 15px);
+    &::before {
+      @include pseudo;
+      width: 40px;
+      position: absolute;
+      left: 180px;
+      top: -60px;
+      border: 40px solid $bg-color;
+      transform: rotateX(0deg) rotateZ(51deg) rotateY(0deg) translate(-20px, 18px);
+    }
+  }
+  .border-2 {
+    width: 100px;
+    height: 45px;
+    background: $bg-color;
+    position: absolute;
+    left: 285px;
+    top: 290px;
+    z-index: 1;
+  }
+  .border-3 {
+    width: 100px;
+    height: 150px;
+    background: $bg-color;
+    position: absolute;
+    left: -224px;
+    top: 290px;
+    z-index: 1;
+  }
+  .line4 {
+    height: 40px;
+    width: 245px;
+    position: absolute;
+    left: -250px;
+    top: 175px;
+    border-style: solid;
+    border-width: 40px 35px 0 0;
+    border-color: $color2 $bg-color transparent;
+    background: $color2;
+    z-index: 2;
+    transform: rotateX(45deg) rotateZ(90deg) rotateY(0deg) translate(50px, 0);
+    &::after {
+      @include pseudo;
+      border-style: solid;
+      border-width: 40px 35px 0 0;
+      border-color: transparent $color2 transparent;
+      z-index: 99;
+      top: -40px;
+      left: -35px;
+    }
+  }
+}
